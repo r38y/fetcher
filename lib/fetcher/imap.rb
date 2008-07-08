@@ -61,6 +61,8 @@ module Fetcher
       @connection.expunge
       @connection.logout
       @connection.disconnect
+    rescue => ex
+      # Rails.logger.error(ex)
     end
     
     def add_to_processed_folder(uid)

@@ -49,7 +49,7 @@ module Daemon
         Dir.chdir WorkingDirectory
         File.umask 0000
         STDIN.reopen "/dev/null"
-        #STDOUT.reopen "/dev/null", "a"
+        STDOUT.reopen "/dev/null", "a"
         STDERR.reopen STDOUT
         trap("TERM") {daemon.stop; exit}
         daemon.start
